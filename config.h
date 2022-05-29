@@ -57,7 +57,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[]    = { "rofi", "-show", "run", "-theme", "/usr/share/rofi/themes/arthur.rasi"};
+static const char *dmenucmd[]    = { "rofi", "-show", "run", "-theme", "/usr/share/rofi/themes/gruvbox-dark.rasi"};
 static const char *termcmd[]     = { "kitty", NULL };
 static const char *browsercmd[]  = { "firefox", NULL };
 static const char *editorcmd[]   = { "vscodium", NULL };
