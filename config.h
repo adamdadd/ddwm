@@ -61,6 +61,7 @@ static const char *dmenucmd[]    = { "rofi", "-show", "run", "-theme", "/usr/sha
 static const char *termcmd[]     = { "kitty", NULL };
 static const char *browsercmd[]  = { "firefox", NULL };
 static const char *editorcmd[]   = { "vscodium", NULL };
+static const char *steamcmd[]    = { "steam", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -68,6 +69,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_f,      spawn,          {.v = browsercmd } },
 	{ MODKEY,                       XK_c,      spawn,          {.v = editorcmd } },
+	{ MODKEY,                       XK_s,      spawn,          {.v = steamcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
