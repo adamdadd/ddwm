@@ -10,8 +10,8 @@ static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
-static const char focus_font[]      = "#ffffff";
-static const char col_focus[]       = "#f57c00";
+static const char focus_font[]      = "#fbf1c7";
+static const char col_focus[]       = "#d65d0e";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -19,7 +19,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "", "7", "8", "9" };
+static const char *tags[] = { "", "", "", "", "", "", "", "", "9" };
 
 static const Rule rules[] = {
 	/* xprop(1):
