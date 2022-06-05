@@ -68,6 +68,8 @@ static const char *termcmd[]     = { "kitty", NULL };
 static const char *browsercmd[]  = { "firefox", NULL };
 static const char *editorcmd[]   = { "vscodium", NULL };
 static const char *steamcmd[]    = { "steam", NULL };
+static const char *gamemodecmd[] = { "bash", "-c", "$HOME/game.sh"};
+static const char *screenshotcmd[] = { "bash", "-c", "flameshot gui -p $HOME/screenshots"};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -76,6 +78,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_f,      spawn,          {.v = browsercmd } },
 	{ MODKEY,                       XK_c,      spawn,          {.v = editorcmd } },
 	{ MODKEY,                       XK_s,      spawn,          {.v = steamcmd } },
+	{ MODKEY,                       XK_g,      spawn,          {.v = gamemodecmd } },
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = screenshotcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
