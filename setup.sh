@@ -15,3 +15,5 @@ then
 fi
 
 ln -s $ROOTDIR/bar.sh $HOME/bar.sh
+
+mkdir $HOME/.config/polybar && cp ./polybar.config $HOME/.config/polybar/config
