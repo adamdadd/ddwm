@@ -40,8 +40,14 @@ static const Rule rules[] = {
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
+static const int nviews       = 1;    /* number of tags highlighted by default */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
+
+static const int master[] = {1, -1, -1};           /* nmaster override per monitor */
+//static const int master[] = {1,-1}; /* monitor 0 = nmaster 1, monitor 1 = no nmaster (all vertical) */
+static const int views[1];            /* nviews override per monitor */
+//static const int views[]  = {4,~0}; /* monitor 0 = nviews 4, monitor 1 = all (all highlighted) */
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */

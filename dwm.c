@@ -267,6 +267,7 @@ static int xerror(Display *dpy, XErrorEvent *ee);
 static int xerrordummy(Display *dpy, XErrorEvent *ee);
 static int xerrorstart(Display *dpy, XErrorEvent *ee);
 static void zoom(const Arg *arg);
+static void reset_view(const Arg *arg);
 
 /* variables */
 static const char broken[] = "broken";
@@ -2449,6 +2450,25 @@ zoom(const Arg *arg)
 	pop(c);
 }
 
+void
+reset_view(const Arg *arg) {
+	const Arg n = {.i = +1};
+	const Arg m = {.f = 1 + mfact};
+	const int mon = selmon->num;
+	Arg i = {.i = 0};
+	Arg v = {.ui = 0};
+	do {
+		focusmon(&n);
+		i.i = (master[selmon->num] ? master[selmon->num] : nmaster) - selmon->nmaster;
+		incnmaster(&i);
+		setmfact(&m);
+		v.ui = (views[selmon->num] == ~0 ? ~0 : ((1 << (views[selmon->num] ? views[selmon->num] : nviews)) -1));
+		view(&v);
+	}
+	while (selmon->num != mon);
+}
+
+
 int
 main(int argc, char *argv[])
 {
@@ -2467,6 +2487,8 @@ main(int argc, char *argv[])
 		die("pledge");
 #endif /* __OpenBSD__ */
 	scan();
+    const Arg r = {0};
+    reset_view(&r);
 	run();
 	cleanup();
 	XCloseDisplay(dpy);
